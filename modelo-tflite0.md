@@ -1,5 +1,6 @@
-# algoritmo2
-Código fuente para la creación de modelo de detección personalizado, encargado de detectar el consumo para medidores eléctricos no inteligentes con certificacion nueva (2015) a partir de una fotografía 
+# model.tflite
+
+Código fuente para la creación de modelo de detección personalizado, encargado de detectar el consumo para medidores eléctricos no inteligentes a partir de una fotografía.
 
 # 1. Se importan los paquetes requeridos para la creacion del modelo de entrenamiento
 
@@ -73,5 +74,3 @@ los factores que pueden afectar la exactitud del modelo pueden ser:
 *   el modelo TFlite utiliza menos espacio pero disminuye la precision, esto debido a que otros modelo utilizan una supresion sin maximo de clases (NMS) para el post-procesado, mientras que TFLite utiliza una supresion de clases global, el cuale s mucho mas rapida, pero menos precisa. El resultado máxzimo de Keras es hasta 100 detecciones, mientras que TFLite solo admite 25.
 
 La etapa de entrenamiento se finalizó, ahora se procede a la confeccion e implementacion del modelo entrenado en la plataforma movil.
-
-
