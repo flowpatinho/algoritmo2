@@ -68,7 +68,11 @@ Se define el modelo en base al tipo, EfficientDet-Lite0, es un tipo de modelo el
 'batch_size': es el tamaño de la tanda de muestras que analiza el modelo por cada etapa, para este caso, es 10, ya que 10 veces 110 imagenes resultan 1101 muestras totales.
 'train_whole_model': para afinar la precision del modelo completo se debe fijar en 'true', este entrena el modelo completo y no solo la priemra capa, esto puede mejorar sustancialemnte la precision, pero puede tardar mas tiempo en entrenarse.
 
-    model = object_detector.create(train_ds, model_spec=spec, batch_size=32, train_whole_model=True, validation_data=val_ds,epochs = 200)
+    model = object_detector.create(train_ds, 
+                                    model_spec=spec, 
+                                    batch_size=10, 
+                                    train_whole_model=True, 
+                                    validation_data=val_ds,epochs = 200)
     
 # 5. Medir precisión y perdidas despues del entrenamiento
 
